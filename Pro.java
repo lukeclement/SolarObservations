@@ -155,11 +155,27 @@ class Pro{
                     break;
             }
             Read lolz=new Read(lol);
+            double xMean=0;
+            double yMean=0;
+            double err=0;
+            double min=9999;
+            double max=0;
             for(int j=0;j<lolz.results().get(0).size();j++){
-                X.add(lolz.results().get(1).get(j));
-                Y.add(lolz.results().get(3).get(j));
-                Yerr.add(0.0);
+                if(lolz.results().get(3).get(j)<min){
+                    min=lolz.results().get(3).get(j);
+                }if(lolz.results().get(3).get(j)>max){
+                    max=lolz.results().get(3).get(j);
+                }
+                xMean+=lolz.results().get(1).get(j);
+                yMean+=lolz.results().get(3).get(j);
+                //X.add(lolz.results().get(1).get(j));
+                //Y.add(lolz.results().get(3).get(j));
+                //Yerr.add(0.0);
             }
+            err=(max-min)/2;
+            X.add(xMean/lolz.results().get(0).size());
+            Y.add(yMean/lolz.results().get(0).size());
+            Yerr.add(err);
             
         }
         Graph graph=new Graph(Y,X,Yerr,"Time(x) vs Uncertainty(Y)");
@@ -184,11 +200,27 @@ class Pro{
                     break;
             }
             Read lolz=new Read(lol);
+            double xMean=0;
+            double yMean=0;
+            double err=0;
+            double min=9999;
+            double max=0;
             for(int j=0;j<lolz.results().get(0).size();j++){
-                X.add(lolz.results().get(1).get(j));
-                Y.add(lolz.results().get(3).get(j));
-                Yerr.add(0.0);
+                if(lolz.results().get(3).get(j)<min){
+                    min=lolz.results().get(3).get(j);
+                }if(lolz.results().get(3).get(j)>max){
+                    max=lolz.results().get(3).get(j);
+                }
+                xMean+=lolz.results().get(1).get(j);
+                yMean+=lolz.results().get(3).get(j);
+                //X.add(lolz.results().get(1).get(j));
+                //Y.add(lolz.results().get(3).get(j));
+                //Yerr.add(0.0);
             }
+            err=(max-min)/2;
+            X.add(xMean/lolz.results().get(0).size());
+            Y.add(yMean/lolz.results().get(0).size());
+            Yerr.add(err);
             
         }
         Graph grapher=new Graph(Y,X,Yerr,"Time(x) vs Uncertainty(Y) (2)");
