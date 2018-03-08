@@ -1,9 +1,9 @@
 import numpy as n
 import matplotlib.pyplot as plt
 plt.style.use('_classic_test')
-x=n.array([0.01,0.00625,0.005,0.004,0.003125,0.0025])
-y=n.array([268.64,732.1800000000001,927.28,1070.8200000000002,1108.32,940.5800000000002])
-err=n.array([3.8499999999999943,17.950000000000045,4.100000000000023,6.399999999999977,0.5,1.3000000000000114])
+x=n.array([3954.3,3637.4800000000005,3516.5800000000004,3379.0,3096.4,2583.2599999999998])
+y=n.array([72175.9,536266.342,859858.496,1146679.486,1228373.36,884691.902])
+err=n.array([32648.179999999993,282813.34500000003,428381.0,573350.625,609719.22,438588.305])
 plt.figure(num=None, figsize=(8,6), dpi=80, facecolor='w', edgecolor='k')
 plt.errorbar(x,y,yerr=err,fmt='x')
-plt.savefig("Time(x) vs Uncertainty(Y) (2).png")
+plt.savefig("Count(x) vs Uncertainty(Y) (2).png")
