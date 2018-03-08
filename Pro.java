@@ -137,7 +137,61 @@ class Pro{
         Y.clear();
         Yerr.clear();
         
+        //Uncertainty vs Time
+        for(int i=0;i<6;i++){
+            String lol="160;";
+            switch(i){
+                case 0:lol+="100;.lst";
+                    break;
+                case 1:lol+="160;.lst";
+                    break;
+                case 2:lol+="200;.lst";
+                    break;
+                case 3:lol+="250;.lst";
+                    break;
+                case 4:lol+="320;.lst";
+                    break;
+                case 5:lol+="400;.lst";
+                    break;
+            }
+            Read lolz=new Read(lol);
+            for(int j=0;j<lolz.results().get(0).size();j++){
+                X.add(lolz.results().get(1).get(j));
+                Y.add(lolz.results().get(3).get(j));
+                Yerr.add(0.0);
+            }
+            
+        }
+        Graph graph=new Graph(Y,X,Yerr,"Time(x) vs Uncertainty(Y)");
+        X.clear();
+        Y.clear();
+        Yerr.clear();
         
+        for(int i=0;i<6;i++){
+            String lol="200;";
+            switch(i){
+                case 0:lol+="100;.lst";
+                    break;
+                case 1:lol+="160;.lst";
+                    break;
+                case 2:lol+="200;.lst";
+                    break;
+                case 3:lol+="250;.lst";
+                    break;
+                case 4:lol+="320;.lst";
+                    break;
+                case 5:lol+="400;.lst";
+                    break;
+            }
+            Read lolz=new Read(lol);
+            for(int j=0;j<lolz.results().get(0).size();j++){
+                X.add(lolz.results().get(1).get(j));
+                Y.add(lolz.results().get(3).get(j));
+                Yerr.add(0.0);
+            }
+            
+        }
+        Graph grapher=new Graph(Y,X,Yerr,"Time(x) vs Uncertainty(Y) (2)");
     
         /*String test="100;100;.lst";
         String line=null;
